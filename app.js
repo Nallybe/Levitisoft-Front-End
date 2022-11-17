@@ -1,7 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
-const port = 8181
+const port = process.env.PORT
 
 
 //Especificar el directorio público
