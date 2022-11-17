@@ -1,0 +1,25 @@
+#sombra{
+    box-shadow: 3px 5px 15px gray;
+}
+
+#sombra_img{
+    box-shadow: 3px 5px 15px gray; 
+    border-radius: 1em; margin-top: 8px;
+}
+
+#sombra_img_1{
+    box-shadow: 1px 5px 1px gray; 
+    border-radius: 0.5em; margin-top: 8px;
+}
+
+#ir{
+    color: black;
+}
+
+.row-footer{
+    background-color: rgb(58, 58, 58);
+}
+
+.card{
+    box-shadow: 3px 5px 15px gray;
+}
