@@ -1,18 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/img/icono.png">
-    <script src="https://kit.fontawesome.com/bc88cb68e3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
-  {{> navbarDashboard}}
-  <br>
-  <center><img src="assets/img/reporte.png" alt=""></center>
-  <br><br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-{{> footerDashboard}}
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="../public/assets/img/icono.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Dashboard
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <script src="https://kit.fontawesome.com/bc88cb68e3.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/assets/css/footer.css">
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <!--Navbar-->
+  {{> bar}}
+      <!-- End Navbar -->
+      <!-- End Navbar -->
+      <!--Inicio cuerpo-->
+      <br><br>
+      <!--Fin cuerpo-->
+      
+
+</body>
+<!--Inicio footer-->
+<footer>
+  <!-- Grid container -->
+  <div class="container  text-center  text-black p-4 pb-0">
+    <center>
+      <!-- Section: Social media -->
+      <section class="mb-4 ">
+        <!-- Facebook -->
+        <a class="btn btn-dark btn-floating m-1"
+          href="https://m.facebook.com/profile.php?id=100065273580751&eav=AfaTJ0zKmgjL2-Zbf94elPzqb_j2bDbRAf9amB-xNR_y21OoeBPoXsNF_KKDDAx4Wnw&paipv=0&_rdr"
+          role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Whatsapp -->
+        <a class="btn btn-dark btn-floating m-1" href="https://wa.link/fm2ez7" role="button"><i
+            class="fab fa-whatsapp"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-dark btn-floating m-1"
+          href="https://instagram.com/leviticoaccesorios?igshid=YmMyMTA2M2Y=" role="button"><i
+            class="fab fa-instagram"></i></a>
+      </section>
+      <!-- Section: Social media -->
+  </div>
+  </center>
+  <!-- Grid container -->
+</footer>
+
+<!--Fin footer-->
+
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="assets/js/plugins/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+<script src="assets/demo/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    // Javascript method's body can be found in assets/js/demos.js
+    demo.initDashboardPageCharts();
+
+  });
+</script>
+</html>
