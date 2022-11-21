@@ -136,6 +136,12 @@ app.get('/AgregarCompra', (req,res) =>{
     })
 })
 
+app.get('/AgregarProduc', (req,res) =>{
+    res.render('AgregarProduc', {
+        nombre: 'AgregarProduc'
+    })
+})
+
 //verificar si el puerto esta escuchando
 app.listen(port, ()=>{
     console.log(`Escuchando por el puerto ${port}`)

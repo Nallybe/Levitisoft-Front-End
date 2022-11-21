@@ -2,33 +2,45 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="assets/img/icono.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Dashboard
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-    name='viewport' />
-  <!--     Fonts and icons     -->
-  <script src="https://kit.fontawesome.com/bc88cb68e3.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- CSS Files -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/footer.css"> 
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="assets/demo/demo.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="assets/img/icono.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Dashboard
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+    <script src="https://kit.fontawesome.com/bc88cb68e3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS Files -->
+
+    <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 {{> bar}}
 <br><br><br><br><br>
 <center>
     <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <br>
         <table class="table">
             <thead>
                 <tr>
@@ -43,7 +55,148 @@
                 <tr>
                     <td>5</td>
                     <td>Administrador</td>
-                    <td><a class="btn btn-dark" href=""><i class="fa fa-eye"></i></a></td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="fa fa-eye" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title fs-5" id="exampleModalLabel">Permisos</h4>
+                                        <button type="button" class="fa fa-xmark" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Roles
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" name="checkbox" class="bootstrap-switch"
+                                                    data-on-label="ON" data-off-label="OFF" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Usuarios
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch ">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Compras
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch ">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Insumos
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Producción
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Productos
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Clientes
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Carrito de compras
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Ventas
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Reparaciones
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cerrar</button>
+
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-success">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td>Activo</td>
                     <td><a class="btn btn-success" href="AgregarRol">Agregar</a> <a class="btn btn-warning"
                             href="EditarRol">Editar</a> <!-- Button trigger modal -->
@@ -78,19 +231,24 @@
         </table>
     </div>
 </center>
+
 <br><br>
 <!--Inicio footer-->
-        <footer class="footer-dark" >
-            <div class="container">
-                <div class="row">
-                    <div class="col item social"><a href="https://m.facebook.com/profile.php?id=100065273580751&eav=AfaTJ0zKmgjL2-Zbf94elPzqb_j2bDbRAf9amB-xNR_y21OoeBPoXsNF_KKDDAx4Wnw&paipv=0&_rdr"><i class="icon ion-social-facebook"></i></a>
-                    <a href="https://wa.link/fm2ez7"><i class="icon ion-social-whatsapp"></i></a>
-                    <a href="https://instagram.com/leviticoaccesorios?igshid=YmMyMTA2M2Y="><i class="icon ion-social-instagram"></i></a></div>
-                </div>
-                <p class="copyright">LA TRILOGIA QUE ESTUDIA © 2022</p>
+<footer class="footer-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col item social"><a
+                    href="https://m.facebook.com/profile.php?id=100065273580751&eav=AfaTJ0zKmgjL2-Zbf94elPzqb_j2bDbRAf9amB-xNR_y21OoeBPoXsNF_KKDDAx4Wnw&paipv=0&_rdr"><i
+                        class="icon ion-social-facebook"></i></a>
+                <a href="https://wa.link/fm2ez7"><i class="icon ion-social-whatsapp"></i></a>
+                <a href="https://instagram.com/leviticoaccesorios?igshid=YmMyMTA2M2Y="><i
+                        class="icon ion-social-instagram"></i></a>
             </div>
-        </footer>
+        </div>
+        <p class="copyright">LA TRILOGIA QUE ESTUDIA © 2022</p>
     </div>
+</footer>
+</div>
 <!--Fin footer-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -111,9 +269,9 @@
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/demo/demo.js"></script>
 <script>
-  $(document).ready(function () {
-    // Javascript method's body can be found in assets/js/demos.js
-    demo.initDashboardPageCharts();
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
 
-  });
+    });
 </script>
