@@ -26,55 +26,175 @@
 </head>
 
 <body>
-    {{> bar}}
-    <br><br><br>
-    <center>
-        <h2>Agregar una nueva venta</h2>
-        <div class="card" style="width: 40%;">
-            <div class="card-header" style="text-align: left;">
-                <a class="btn-close end" href="ventas"></a>
+    <!--Barra de navegación-->
+    <div class="wrapper ">
+        <div class="sidebar" data-color="black">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="" class="simple-text" style="color:white;">
+                    Levitisoft
+                </a>
             </div>
-            <div class="card-body">
-
-                <div class="row">
-                    <div class="col-6">
-                        <label>Id</label>
-                        <input type="number">
-                    </div>
-                    <div class="col-6">
-                        <label>Nombre</label>
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-6">
-                        <label>Teléfono</label>
-                        <input type="number">
-                    </div>
-                    <div class="col-6">
-                        <a class="btn btn-info" href="AgregarProduc">Productos</a>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-6">
-                        <label>Total</label>
-                        <input type="number">
-                    </div>
-                    <div class="col-6">
-                        <label>Fecha</label><br>
-                        <input type="date">
-                    </div>
-                </div>
-
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="dashboard">
+                            <i class="fa fa-house" style="color:white;"></i>
+                            <p style="color:white;">Home</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="roles" >
+                            <i class="fa fa-gear" style="color: white;"></i>
+                            <p style="color: white;">Roles</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usuarios">
+                            <i class="fa fa-users" style="color:white;"></i>
+                            <p style="color:white;">Usuarios</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="compras">
+                            <i class="fa fa-shop" style="color:white;"></i>
+                            <p style="color:white;">Compras</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="insumos">
+                            <i class="fa fa-box" style="color:white;"></i>
+                            <p style="color:white;">Insumos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="producción">
+                            <i class="fa fa-scissors" style="color:white;"></i>
+                            <p style="color:white;">Producción</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="productos">
+                            <i class="fa fa-boxes-packing" style="color:white;"></i>
+                            <p style="color:white;">Productos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes">
+                            <i class="fa fa-user" style="color:white;"></i>
+                            <p style="color:white;">Clientes</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Carrito de compras">
+                            <i class="fa fa-cart-shopping" style="color:white;"></i>
+                            <p style="color:white;">Carrito de compras</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="ventas" style="background-color: white">
+                            <i class="fa fa-truck-fast" style="color: black;"></i>
+                            <p style="color:black;">Ventas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reparaciones">
+                            <i class="fa fa-screwdriver-wrench" style="color:white;"></i>
+                            <p style="color:white;">Reparaciones</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <br>
-            <a class="btn btn-danger" href="ventas">Cancelar</a>
-            <a class="btn btn-success" href="ventas">Enviar</a>
         </div>
-    </center>
-    <br>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand navbar-absolute" style="background-color: rgb(124, 123, 123);">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#">Dashboard</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <a class="nav-link" href="home">
+                            <i class="fa fa-user"></i>
+                            <p>
+                                <span class="d-lg-none d-md-block">Account</span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!--Barra de navegación-->
+            <br><br><br>
+            <center>
+                <h2>Agregar una nueva venta</h2>
+                <div class="card" style="width: 40%;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label>Nombre</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="col-6">
+                                <label>Teléfono</label>
+                                <input type="number" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="btn btn-info" href="AgregarProduc">Productos</a>
+                            </div>
+                            <div class="col-6">
+                                <label>Total</label>
+                                <input type="number" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Fecha</label><br>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <a class="btn btn-danger" href="ventas">Cancelar</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Enviar
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Venta registrada exitosamente
+                                    </h4>
+                                    <a href="ventas" type="button" class="fa fa-xmark" data-bs="modal"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            <br>
 
 </body>
 <!--Inicio footer-->

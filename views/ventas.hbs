@@ -25,104 +25,232 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-{{> bar}}
-<br><br><br><br>
-<center>
-  <div class="container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Teléfono</th>
-          <th>Producto</th>
-          <th>Total</th>
-          <th>Fecha</th>
-          <th>Funciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>22</td>
-          <td>Alejandra</td>
-          <td>36873633</td>
-          <td>
-            <!-- Button trigger modal -->
-            <button type="button" class="fa fa-eye" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<body>
+<!--Barra de navegación-->
+<div class="wrapper ">
+  <div class="sidebar" data-color="black">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+    <div class="logo">
+      <a href="" class="simple-text" style="color:white;">
+        Levitisoft
+      </a>
+    </div>
+    <div class="sidebar-wrapper" id="sidebar-wrapper">
+      <ul class="nav">
+        <li>
+          <a href="dashboard">
+            <i class="fa fa-house" style="color:white;"></i>
+            <p style="color:white;">Home</p>
+          </a>
+        </li>
+        <li>
+          <a href="roles">
+            <i class="fa fa-gear" style="color: white;"></i>
+            <p style="color: white;">Roles</p>
+          </a>
+        </li>
+        <li>
+          <a href="usuarios">
+            <i class="fa fa-users" style="color:white;"></i>
+            <p style="color:white;">Usuarios</p>
+          </a>
+        </li>
+        <li>
+          <a href="compras">
+            <i class="fa fa-shop" style="color:white;"></i>
+            <p style="color:white;">Compras</p>
+          </a>
+        </li>
+        <li>
+          <a href="insumos">
+            <i class="fa fa-box" style="color:white;"></i>
+            <p style="color:white;">Insumos</p>
+          </a>
+        </li>
+        <li>
+          <a href="producción">
+            <i class="fa fa-scissors" style="color:white;"></i>
+            <p style="color:white;">Producción</p>
+          </a>
+        </li>
+        <li>
+          <a href="productos">
+            <i class="fa fa-boxes-packing" style="color:white;"></i>
+            <p style="color:white;">Productos</p>
+          </a>
+        </li>
+        <li>
+          <a href="clientes">
+            <i class="fa fa-user" style="color:white;"></i>
+            <p style="color:white;">Clientes</p>
+          </a>
+        </li>
+        <li>
+          <a href="Carrito de compras">
+            <i class="fa fa-cart-shopping" style="color:white;"></i>
+            <p style="color:white;">Carrito de compras</p>
+          </a>
+        </li>
+        <li class="active">
+          <a href="ventas" style="background-color: white">
+            <i class="fa fa-truck-fast" style="color: black;"></i>
+            <p style="color:black;">Ventas</p>
+          </a>
+        </li>
+        <li>
+          <a href="reparaciones">
+            <i class="fa fa-screwdriver-wrench" style="color:white;"></i>
+            <p style="color:white;">Reparaciones</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel" id="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-absolute" style="background-color: rgb(124, 123, 123);">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+          <div class="navbar-toggle">
+            <button type="button" class="navbar-toggler">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
             </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title fs-5" id="exampleModalLabel">Productos</h4>
-                    <button type="button" class="icon ion-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="card" style="width: 13rem;">
-                          <img src="https://countryandroses.com/wp-content/uploads/2020/06/sombrero-de-cuero-marron-vaquero-country-and-roses-alan-1.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <p class="card-text">Precio: 205.000</p>
-                            <p class="card-text">Cantidad: 2</p>
+          </div>
+          <a class="navbar-brand" href="#">Dashboard</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+          <a class="nav-link" href="home">
+            <i class="fa fa-user"></i>
+            <p>
+              <span class="d-lg-none d-md-block">Account</span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!--Barra de navegación-->
+    <br><br><br><br>
+    <center>
+      <div class="container">
+        <div class="row">
+                    <div class="col-4">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-8">
+                        <a class="btn btn-success" href="AgregarVenta">Agregar</a> 
+                    </div>
+                </div>
+        <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Producto</th>
+              <th>Total</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>22</td>
+              <td>Alejandra</td>
+              <td>36873633</td>
+              <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="fa fa-eye" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title fs-5" id="exampleModalLabel">Productos</h4>
+                        <button type="button" class="icon ion-close" data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="card" style="width: 13rem;">
+                              <img
+                                src="https://countryandroses.com/wp-content/uploads/2020/06/sombrero-de-cuero-marron-vaquero-country-and-roses-alan-1.jpg"
+                                class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Precio: 205.000</p>
+                                <p class="card-text">Cantidad: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="card" style="width: 13rem;">
+                              <img
+                                src="https://chevignon.vtexassets.com/arquivos/ids/992694/63_022D000_041100_0.jpg?v=1755035777"
+                                class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <p class="card-text">Precio: 50.000</p>
+                                <p class="card-text">Cantidad: 1</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
-                        <div class="card" style="width: 13rem;">
-                          <img src="https://chevignon.vtexassets.com/arquivos/ids/992694/63_022D000_041100_0.jpg?v=1755035777" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <p class="card-text">Precio: 50.000</p>
-                            <p class="card-text">Cantidad: 1</p>
-                          </div>
-                        </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </td>
-          <td>$460000</td>
-          <td>17/11/2022</td>
-          <td><a class="btn btn-success" href="AgregarVenta">Agregar</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</center>
-<br><br>
-</body>
-<!--Inicio footer-->
-{{> footer}}
-<!--Fin footer-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<!--   Core JS Files   -->
-<script src="assets/js/core/jquery.min.js"></script>
-<script src="assets/js/core/popper.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
-<script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<!-- Chart JS -->
-<script src="assets/js/plugins/chartjs.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="assets/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="assets/demo/demo.js"></script>
-<script>
-  $(document).ready(function () {
-    // Javascript method's body can be found in assets/js/demos.js
-    demo.initDashboardPageCharts();
+              </td>
+              <td>$460000</td>
+              <td>17/11/2022</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+    <br><br>
+    </body>
+    <!--Inicio footer-->
+    {{> footer}}
+    <!--Fin footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Chart JS -->
+    <script src="assets/js/plugins/chartjs.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+    <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+    <script src="assets/demo/demo.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
 
-  });
-</script>
+      });
+    </script>

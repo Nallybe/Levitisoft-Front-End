@@ -16,16 +16,101 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- CSS Files -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/footer.css"> 
+  <link rel="stylesheet" href="assets/css/footer.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
+<style>
+  .chart-wrap {
+    --chart-width: 420px;
+    --grid-color: #aaa;
+    --bar-color: #F16335;
+    --bar-thickness: 40px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
 
+    font-family: sans-serif;
+    width: var(--chart-width);
+  }
+
+  .chart-wrap .title {
+    font-weight: bold;
+    padding: 1.8em 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+  .chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+  }
+
+  .chart-wrap.horizontal .bar::after {
+    /* giramos las letras para horizontal*/
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+  }
+
+  .chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+  }
+
+  /* posicionamos el % del gráfico*/
+  .chart-wrap .grid::before {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '0%';
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+  }
+
+  .chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '100%';
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+  }
+
+  /* giramos las valores de 0% y 100% para horizontal */
+  .chart-wrap.horizontal .grid::before,
+  .chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+  }
+
+  .chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+  }
+
+  .chart-wrap .bar:hover {
+    opacity: 0.7;
+  }
+
+  .chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+</style>
 
 <body class="">
   <!--Navbar-->
@@ -33,14 +118,62 @@
   <!-- End Navbar -->
   <!-- End Navbar -->
   <!--Inicio cuerpo-->
-  <div style="margin-top: 30%;">
-
+  <br><br><br><br>
+  <div class="col-11">
+    <div class="card float-right" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Usuarios registrados</h5>
+        <div class="row">
+          <div class="col-5">
+            <img src="assets/img/users.png" alt="" style="width: 79%;">
+          </div>
+          <div class="col-7">
+            <h4>700000</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="container">
+    <div class="chart-wrap horizontal">
+      <!-- quitar el estilo "horizontal" para visualizar verticalmente -->
+      <div class="title">Productos más vendidos</div>
+
+      <div class="grid">
+        <div class="bar" style="--bar-value:85%;" data-name="Correas" title="Correas 85%"></div>
+        <div class="bar" style="--bar-value:23%;" data-name="Zapatos" title="Zapatos 23%"></div>
+        <div class="bar" style="--bar-value:7%;" data-name="Llaveros" title="Llaveros 7%"></div>
+        <div class="bar" style="--bar-value:38%;" data-name="Chaquetas" title="Chaquetas 38%"></div>
+        <div class="bar" style="--bar-value:35%;" data-name="Sombreros" title="Sombreros 35%"></div>
+        <div class="bar" style="--bar-value:30%;" data-name="LinkedIn" title="LinkedIn 30%"></div>
+        <div class="bar" style="--bar-value:20%;" data-name="Zapatos" title="Other 20%"></div>
+      </div>
+    </div>
+  </div>
+
+
   <!--Fin cuerpo-->
 
 
 </body>
-{{> footer}}
+<!--Inicio footer-->
+<div style="bottom: 0; margin-top: 20%;">
+  <footer class="footer-dark" style="position:static">
+    <div class="container">
+      <div class="row">
+        <div class="col item social"><a
+            href="https://m.facebook.com/profile.php?id=100065273580751&amp;eav=AfaTJ0zKmgjL2-Zbf94elPzqb_j2bDbRAf9amB-xNR_y21OoeBPoXsNF_KKDDAx4Wnw&amp;paipv=0&amp;_rdr&quot;&gt;&lt;i"
+            class="icon ion-social-facebook"></i></a>
+          <a href="https://wa.link/fm2ez7&quot;&gt;&lt;i" class="icon ion-social-whatsapp"></i></a>
+          <a href="https://instagram.com/leviticoaccesorios?igshid=YmMyMTA2M2Y=&quot;&gt;&lt;i"
+            class="icon ion-social-instagram"></i></a>
+        </div>
+      </div>
+      <p class="copyright">LA TRILOGIA QUE ESTUDIA © 2022</p>
+    </div>
+  </footer>
+</div>
+<!--Fin footer-->
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
