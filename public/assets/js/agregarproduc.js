@@ -38,7 +38,7 @@ function renderizarProductos() {
     baseDeDatos.forEach((info) => {
         // Estructura
         const miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-3');
+        miNodo.classList.add('card', 'col-sm-4');
         // Body
         const miNodoCardBody = document.createElement('div');
         miNodoCardBody.classList.add('card-body');
@@ -166,3 +166,13 @@ DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 renderizarProductos();
 renderizarCarrito();
 
+const alerta = () =>{
+    Swal.fire({
+        icon: 'success',
+        title: 'Productos agregados'
+      }).then(function() {
+        window.location.href = "AgregarVenta";
+      })
+}
+const validar = document.querySelector('#boton')
+validar.addEventListener('click',alerta)
