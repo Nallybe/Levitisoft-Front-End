@@ -142,6 +142,12 @@ app.get('/AgregarProduc', (req,res) =>{
     })
 })
 
+app.get('/logginJesid', (req,res) =>{
+    res.render('logginJesid', {
+        nombre: 'logginJesid'
+    })
+})
+
 //verificar si el puerto esta escuchando
 app.listen(port, ()=>{
     console.log(`Escuchando por el puerto ${port}`)

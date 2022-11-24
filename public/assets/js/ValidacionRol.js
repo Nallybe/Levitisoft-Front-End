@@ -21,7 +21,10 @@ const getRol = () => {
     let nombre = document.querySelector('#nombreRol').value
     let estado = document.querySelector('#estadoRol').value
     if(nombre=="" || nombre==null || estado=="" || estado==null){
-        alert('Campos obligatorios')
+        Swal.fire({
+            icon: 'error',
+            title: 'Todos los campos son obligatorios'
+          })
     }else{
         return new Promise( (resolve, reject) => {
             let encontrado = false
@@ -31,12 +34,20 @@ const getRol = () => {
                 }
             })
            if (encontrado == true) {
-            resolve( alert('Rol ya existente'),
+            resolve( Swal.fire({
+                icon: 'error',
+                title: 'Rol ya existente'
+              }),
             document.querySelector('#nombreRol').value="",
             document.querySelector('#estadoRol').value="" )//Si la búsqueda es exitosa
            }else{
             reject(
-                alert('Rol registrado exitosamente'),
+                Swal.fire({
+                     icon: 'success',
+                     title: 'Rol registrado correctamente'
+                }).then(function() {
+                    window.location.href = "roles";
+                  }),
                 document.querySelector('#nombreRol').value="",
                 document.querySelector('#estadoRol').value=""
             ) //Si la búsqueda no fue exitosa
