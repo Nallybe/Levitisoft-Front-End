@@ -3,7 +3,7 @@ const ModalPermiso = () =>{
         title: 'Permisos editados',
         icon: 'success'
     }).then(function() {
-        window.location.href = "roles";
+        window.location.href = "EditarRol";
       })
 }
 const modal = document.querySelector('#modalPermiso')
